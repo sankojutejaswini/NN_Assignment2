@@ -1,0 +1,41 @@
+First_name = input("Enter First name  ");  #Taking first name from user
+Last_name = input("Enter Last name  ");    #Taking last name from user
+Full_name =  First_name + Last_name      #concatenating first and last name using + symbol
+print("Full name is :", Full_name);      #printing full name
+
+def fullname(firstName, lastName):
+    return firstName + " " + lastName   #defining first and last name
+
+def string_alternative(name):           #using string_alternative function and returning name
+    return name[::2]
+
+def main():
+    firstName = input("Enter first name: ")     #entering first name
+    lastName = input("Enter last name: ")       #entering last name
+    fullName = fullname(firstName, lastName)    #defining full name
+    alternative_string = string_alternative(fullName)
+    print("Alternative name is:", alternative_string)
+    
+if __name__ == "__main_":   
+    main()
+    
+    f=open("input.txt","w")  #opening file with write mode
+f.write("Python Course\n")  #writing first line 
+f.write(" Deep Learning Course") #writing secomd line into file
+f.close() #closing file after writing
+f=open("input.txt","r") #opening file with read mode
+print(f.read()) #reading that file
+f.close()  # closing file after freading
+
+from collections import Counter  #importing Counter from collections library
+def count_words(filename):   #defining count_words function by taking file as argument
+    with open(filename) as f: 
+        return Counter(f.read().split())  #reading the input file and split every word in file and count words
+
+with open("output.txt","a") as f:  #opening new outputfile and sending output of returned function to output file
+    print("Number of words in the file:\n", count_words("input.txt"))     #printing output
+    
+    heights=[96,106, 156, 148]   #list with heights of customers in inches
+print("heights of customers in inches is",heights)  #printimg them in inches
+newlist=[each_value_in_list*2.54 for each_value_in_list in heights]  #for each value in heights list , converting inches to centimetres using formula
+print("height of customers in centimetres is ",newlist)  #printing ne list in centimetres
